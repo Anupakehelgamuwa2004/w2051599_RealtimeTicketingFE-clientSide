@@ -1,6 +1,3 @@
-
-
-
 # Ticket Management System
 
 ## Overview
