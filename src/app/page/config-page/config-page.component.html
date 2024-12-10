@@ -1,0 +1,46 @@
+<!-- Configuration Form -->
+<div class="container">
+  <!-- Load Configuration Button -->
+  <div class="mb-4 text-center">
+    <button type="button" class="btn btn-info load-config-btn configNtm" style="    padding: 1rem;
+    border-radius: 13px;" (click)="loadConfiguration()">Load from Previous
+      Configuration</button>
+  </div>
+
+  <form id="config-form" novalidate>
+    <h1><b>Configuration</b></h1>
+
+    <!-- Maximum Ticket Capacity Field -->
+    <div class="mb-3">
+      <label for="maxCapacity" class="form-label">Maximum Ticket Capacity</label>
+      <input type="number" class="form-control" id="maxCapacity" name="maxCapacity"
+        placeholder="Enter Maximum Ticket Capacity" required min="1" [(ngModel)]="ticketInfor.maxTicketCapacity">
+    </div>
+
+    <!-- Total Tickets Field -->
+    <div class="mb-3">
+      <label for="totalTickets" class="form-label">Total Tickets</label>
+      <input type="number" class="form-control" id="totalTickets" name="totalTickets" placeholder="Enter Total Tickets"
+        required min="1" [(ngModel)]="ticketInfor.totalTickets">
+    </div>
+
+    <!-- Ticket Release Rate Field -->
+    <div class="mb-3">
+      <label for="releaseRate" class="form-label">Ticket Release Rate (ms)</label>
+      <input type="number" class="form-control" id="releaseRate" name="releaseRate"
+        placeholder="Enter Ticket Release Rate in milliseconds" required min="1"
+        [(ngModel)]="ticketInfor.ticketReleaseRate">
+    </div>
+
+    <!-- Ticket Retrieval Rate Field -->
+    <div class="mb-3">
+      <label for="retrievalRate" class="form-label">Ticket Retrieval Rate (ms)</label>
+      <input type="number" class="form-control" id="retrievalRate" name="retrievalRate"
+        placeholder="Enter Ticket Retrieval Rate in milliseconds" required min="1"
+        [(ngModel)]="ticketInfor.customerRetrievalRate">
+    </div>
+
+    <!-- Configure Button -->
+    <button type="button" class="btn btn-primary configure-btn" (click)="configureTickets()">Configure</button>
+  </form>
+</div>

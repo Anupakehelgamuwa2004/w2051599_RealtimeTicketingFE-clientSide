@@ -1,0 +1,75 @@
+.box {
+  max-height: 50rem;
+  margin: 2rem;
+  padding: 2rem;
+  border-radius: 15px;
+  background-color: #F5EFFF;
+  overflow-y: scroll;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  font-family: 'Arial', sans-serif;
+  position: relative;
+  animation: fadeIn 1s ease-out;
+  scrollbar-width: none;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Styling for individual messages */
+.message {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.message:hover {
+  transform: scale(1.05);
+}
+
+.message-text {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #333;
+}
+
+.timestamp {
+  font-size: 0.9em;
+  color: #aaa;
+  margin-top: 5px;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+.output-box {
+  position: absolute;
+  top: 330px;
+  left: 170px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  padding: 25px 30px;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  transition: top 0.3s ease;
+}
+
+.output-box h5 {
+  margin-bottom: 20px;
+  color: #ffffff;
+  font-size: 1.3em;
+}
+
+.output-value {
+  font-size: 1.8em;
+  color: #000000;
+  font-weight: bold;
+}

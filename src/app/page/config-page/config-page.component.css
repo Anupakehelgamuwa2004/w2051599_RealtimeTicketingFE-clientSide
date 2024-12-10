@@ -1,0 +1,193 @@
+/* Reset some default styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* Center vertically */
+  /* min-height: 100vh; */
+  border-radius: 15px;
+  font-family: 'Courier New', Courier, monospace;
+
+  margin: 3rem;
+  background-color: #F5EFFF;
+
+
+  padding: 3rem;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
+}
+
+
+/* Form Container */
+.container {
+  /* background-color: #ffffff; */
+  width: 80%;
+  position: relative;
+  /* To stack above the output box if overlapping */
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Arial', sans-serif;
+
+
+
+
+  min-width: 33rem;
+  border-radius: 15px;
+}
+
+.configNtm {
+  padding: 1rem;
+  border-radius: 13px;
+}
+
+/* Load Configuration Button */
+.load-config-btn {
+  background: #17a2b8;
+  /* Info color */
+  /* color: #ffffff; */
+  border: none;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.load-config-btn:hover {
+  background: #138496;
+  transform: translateY(-2px);
+}
+
+.load-config-btn:active {
+  background: #117a8b;
+  transform: translateY(0);
+}
+
+/* Heading */
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333333;
+  font-size: 2em;
+  letter-spacing: 1px;
+}
+
+/* Form Labels */
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #555555;
+  font-weight: bold;
+}
+
+/* Form Inputs */
+.form-control {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  transition: border 0.3s, box-shadow 0.3s;
+  font-size: 1em;
+  background-color: #f9f9f9;
+}
+
+/* Input Focus State */
+.form-control:focus {
+  border-color: #7a5fff;
+  outline: none;
+  background-color: #ffffff;
+}
+
+/* Input Validation States */
+.form-control:invalid {
+  border-color: #000000;
+}
+
+.form-control:valid {
+  border-color: #28a745;
+}
+
+/* Invalid Feedback Visibility */
+.invalid-feedback {
+  color: #ff0000;
+  font-size: 0.875em;
+  margin-top: -15px;
+  margin-bottom: 15px;
+  display: none;
+}
+
+.form-control:invalid+.invalid-feedback {
+  display: block;
+}
+
+/* Buttons */
+.btn {
+  width: 100%;
+  padding: 14px 0;
+  background-color: #CDC1FF;
+
+
+  color: #000000;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+  background-color: #D0A2F7;
+
+
+
+
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  background-color: #A594F9;
+  transform: translateY(0);
+}
+
+
+/* Configure Button Specific Styles */
+.configure-btn {
+ background-color: #CDC1FF;
+
+  /* Green color */
+}
+
+.configure-btn:hover {
+  background-color: #D0A2F7;
+
+}
+
+.configure-btn:active {
+  background: #A594F9;
+}
+
+/* Responsive Design */
+@media (max-width: 576px) {
+  .container {
+    padding: 30px 20px;
+  }
+
+  .centered-container {
+    padding: 10px 10px;
+    /* Further reduced padding on small screens */
+  }
+
+  .output-box {
+    position: static;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
