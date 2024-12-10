@@ -1,27 +1,131 @@
-# OopFE
+# Ticket Management System
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.9.
+## Overview
+This is a full-stack Ticket Management System built with Angular (Frontend) and a backend service. The application allows users to configure, start, stop, and monitor a ticket selling and buying process.
 
-## Development server
+## Prerequisites
+- Node.js (version 16 or higher)
+- Angular CLI
+- Java Development Kit (JDK) 11 or higher
+- Maven or Gradle
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Frontend Setup
 
-## Code scaffolding
+### Installation
+1. Clone the repository
+2. Navigate to the frontend directory
+3. Install dependencies:
+```bash
+npm install
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Dependencies
+Key dependencies include:
+- Angular
+- RxJS
+- SockJS
+- StompJS
+- HttpClientModule
 
-## Build
+### Configuration
+- Ensure backend server is running on `http://localhost:9090`
+- WebSocket connection endpoint: `http://localhost:9090/chat`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Features
 
-## Running unit tests
+### Configuration Page
+- Set maximum ticket capacity
+- Configure total tickets
+- Define ticket release and retrieval rates
+- Load previous configurations
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Start/Stop Controls
+- Start and stop ticket selling/buying threads
+- Fetch current configuration
 
-## Running end-to-end tests
+### Real-time Ticket Monitoring
+- WebSocket integration for live updates
+- Display ticket addition and purchase events
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Running the Application
 
-## Further help
+### Frontend
+```bash
+ng serve
+```
+- Application will be available at `http://localhost:4200`
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### Backend
+- Ensure your Spring Boot backend is running on port 9090
+- Required endpoints:
+  - `/config/update` (POST): Update configuration
+  - `/config/get` (GET): Retrieve current configuration
+  - `/config/start` (POST): Start ticket threads
+  - `/config/stop` (POST): Stop ticket threads
+
+## Endpoints and API Interactions
+
+### Configuration Update
+- **Endpoint**: `http://localhost:9090/config/update`
+- **Method**: POST
+- **Payload**: 
+```json
+{
+  "maxTicketCapacity": 100,
+  "totalTickets": 50,
+  "ticketReleaseRate": 1000,
+  "customerRetrievalRate": 1000
+}
+```
+
+### Start/Stop Threads
+- **Start Endpoint**: `http://localhost:9090/config/start`
+- **Stop Endpoint**: `http://localhost:9090/config/stop`
+
+## WebSocket Communication
+- Subscribes to `/topic/tickets`
+- Receives real-time updates about:
+  - Ticket additions
+  - Ticket purchases
+
+## Troubleshooting
+
+### Common Issues
+1. **Connection Refused**
+   - Verify backend server is running
+   - Check CORS settings
+   - Confirm port configuration
+
+2. **WebSocket Connection Failure**
+   - Ensure SockJS and StompJS are correctly imported
+   - Verify WebSocket endpoint URL
+
+### Logging
+- Frontend: Check browser console
+- Backend: Review server logs
+
+## Development Notes
+
+### Component Structure
+- `BaseComponent`: Main container
+- `ConfigPageComponent`: Configuration settings
+- `StartStopComponent`: Control thread execution
+- `TotalTicketComponent`: Real-time ticket monitoring
+
+### Styling
+- Responsive design
+- Custom CSS with flexibility
+- Gradient and hover effects
+
+## Contributing
+1. Fork the repository
+2. Create a feature branch
+3. Commit changes
+4. Push to the branch
+5. Create a Pull Request
+
+## License
+[Specify your license here]
+
+## Contact
+[Your contact information or support email]
