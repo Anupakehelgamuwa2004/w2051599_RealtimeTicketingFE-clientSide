@@ -124,8 +124,7 @@ ng serve
 4. Push to the branch
 5. Create a Pull Request
 
-## License
-[Specify your license here]
+
 
 ## Contact
-[Your contact information or support email]
+[email : anupakehel8403@gmail.com]
